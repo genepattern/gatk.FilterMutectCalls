@@ -1,0 +1,17 @@
+name: "gatk.FilterMutectCalls - Basic Mitochondrial Filtering Test"
+module: gatk.FilterMutectCalls
+description: >
+  Tests FilterMutectCalls on a small mitochondrial (chrM) Mutect2 VCF from NA12878.
+  Uses a matching GRCh38 chrM-only reference. All test files are from the GATK
+  public test resource suite (broadinstitute/gatk GitHub repository).
+params:
+  input.vcf: data/mito_unfiltered.vcf
+  reference: data/Homo_sapiens_assembly38.mt_only.fasta
+  reference.fai: data/Homo_sapiens_assembly38.mt_only.fasta.fai
+  reference.dict: data/Homo_sapiens_assembly38.mt_only.dict
+  stats.file: data/mito_unfiltered.vcf.stats
+  output.vcf.name: mito_filtered.vcf
+
+assertions:
+  files:
+    - mito_filtered.vcf

@@ -1,0 +1,49 @@
+[
+    {
+        "name": "Input VCF",
+        "description": "Unfiltered Mutect2 VCF output file and its corresponding tabix index (.tbi). If the VCF is bgzipped (.vcf.gz), both files must be provided so GATK can locate the index alongside the VCF.",
+        "parameters": [
+            "input.vcf",
+            "input.vcf.tbi"
+        ],
+        "hidden": false
+    },
+    {
+        "name": "Reference Genome",
+        "description": "Reference genome FASTA file, its .fai index, and its .dict sequence dictionary. All three files are staged into the job working directory before GATK is invoked.",
+        "parameters": [
+            "reference",
+            "reference.fai",
+            "reference.dict"
+        ],
+        "hidden": false
+    },
+    {
+        "name": "Output",
+        "description": "Name for the output filtered VCF file produced by FilterMutectCalls.",
+        "parameters": [
+            "output.vcf.name"
+        ],
+        "hidden": false
+    },
+    {
+        "name": "Filtering Inputs",
+        "description": "Optional but strongly recommended auxiliary files from earlier pipeline steps: Mutect2 stats, CalculateContamination outputs, and LearnReadOrientationModel output. Including these files substantially improves filtering accuracy.",
+        "parameters": [
+            "stats.file",
+            "contamination.table",
+            "tumor.segmentation",
+            "orientation.bias.artifact.priors"
+        ],
+        "hidden": false
+    },
+    {
+        "name": "Advanced Options",
+        "description": "Optional GATK arguments file and GATK configuration file for passing additional parameters not exposed as explicit module parameters.",
+        "parameters": [
+            "arguments.file",
+            "gatk.config.file"
+        ],
+        "hidden": true
+    }
+]
