@@ -18,6 +18,8 @@ job.cpuCount=2
 job.memory=8Gb
 job.docker.image=broadinstitute/gatk\:4.1.4.1
 src.repo=https://github.com/broadinstitute/gatk
+documentationUrl=https://github.com/genepattern/gatk.FilterMutectCalls
+
 
 # Parameters
 
